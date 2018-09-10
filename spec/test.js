@@ -1,14 +1,23 @@
-import chai from 'chai';
-import sinon  from 'sinon';
-import sinonChai from 'sinon-chai';
+import {expect} from 'chai'
+import sinon from 'sinon'
+import * as hello from '../hello'
 
-chai.should();
-chai.use(sinonChai);
+describe('sinon', function () {
 
-describe('sinon-chai', function () {
-  it('should call the mocked function', function () {
-    const spy = sinon.spy();
-    spy(123);
-    spy.should.have.been.calledWith(123);
-  });
-});
+    const sandbox = sinon.createSandbox()
+    afterEach(() => sandbox.restore())
+
+    it('should replace the hello function', function () {
+        sandbox.stub(hello, 'hello').callsFake(function (name) {
+            return `Hello, ${name} (from stub function)`
+        })
+        const result = hello.hello('sinon')
+        expect(result).eq('Hello, sinon (from stub function)')
+    })
+
+    it('the hello.hello() should be the real one and not affected by other tests', () => {
+        const result = hello.hello('sinon')
+        expect(result).eq('Hello, sinon!')
+    })
+
+})

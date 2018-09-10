@@ -1,19 +1,11 @@
-Mocha chai-sinon Demo
-=====================
+Sinon Sandbox Demo
+==================
 
-How to use `chai-sinon` to write tests.
+使用`sandbox`可以让每个测试保持独立，不会因为在这个测试中使用`stub`而影响另一个测试。
 
-The expected parameter is `1234`, and `spy(123)` shows the real one.
+除了`sandbox`，好像直接使用`sinon.restore()`也可以。
 
 ```
 npm install
 npm test
-```
-
-`chai-sinon` is better than `chai-spies` is when the parameter passed into 
-the mock is not the expected, it will show the real one, like:
-
-```
-expected spy to have been called with arguments 1234
-    spy(123) at Context.<anonymous> (/Users/twer/workspace/mocha-chai-sinon-demo/spec/test.js:11:5)
 ```

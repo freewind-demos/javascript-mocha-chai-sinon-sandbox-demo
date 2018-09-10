@@ -1,23 +1,13 @@
 {
-  "name": "mocha-es6-demo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register spec"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "babel-core": "6.17.0",
-    "babel-preset-es2015": "6.16.0",
-    "chai": "^3.5.0",
-    "mocha": "3.1.0",
-    "sinon": "^1.17.6",
-    "sinon-chai": "^2.8.0"
-  },
-  "dependencies": {
-    "expect": "^1.20.2"
+    "babel-core": "6.26.3",
+    "babel-preset-es2015": "6.24.1",
+    "chai": "^4.1.2",
+    "mocha": "5.2.0",
+    "sinon": "^6.2.0",
+    "sinon-chai": "^3.2.0"
   }
 }
